@@ -1,17 +1,12 @@
 <?php
 class DBConn {
-    private $host = "localhost";
-    private $user = "root";
-    private $password = "B!u3R0cks";
-    private $db = 'ilp';
-    
      private function getConnection() {
-        $host = "localhost";
-        $user = "root";
-        $password = "B!u3R0ck$";
-        $db = 'ilp';
+         $host = "localhost";
+         $user = "ubuntu";
+         $password = "B!u3R0ck$";
+         $db = 'ilp';
         try {
-            $conn = new PDO("mysql:host=$host;dbname=$db", $user, $password);
+            $conn = new PDO("pgsql:host=$host;dbname=$db", $user, $password);
             // set the PDO error mode to exception
             $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
