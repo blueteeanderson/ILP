@@ -1,5 +1,4 @@
 <?php
-print_r($_ENV);
 require_once($_SERVER['DOCUMENT_ROOT']."/includes/DBConn.php");
 $con = new DBConn();
 $sql = "SELECT * FROM temp";
