@@ -1,12 +1,20 @@
 <?php
 class DBConn {
      private function getConnection() {
-         $host = "localhost";
-         $user = "ubuntu";
-         $password = "B!u3R0ck$";
-         $db = 'ilp';
+         /*$db ="d4ji6dr27eh50i";
+         $host = "ec2-54-243-42-218.compute-1.amazonaws.com";
+         $port="5432";
+         $user="xrwrwkzgqcvknj";
+         $password="4d6d5543c0b9b5fa2858e500f99b2445fda1b3c29d0005817c5b11f79242d035";
+         $url = "postgres://xrwrwkzgqcvknj:4d6d5543c0b9b5fa2858e500f99b2445fda1b3c29d0005817c5b11f79242d035@ec2-54-243-42-218.compute-1.amazonaws.com:5432/d4ji6dr27eh50i";
+         */
+         $host = getenv('DB_HOST');
+         $user = getenv('DB_USER');
+         $password = getenv('DB_PASS');
+         $db = getenv('DB_NAME');
+         $port = getenv('DB_PORT');
         try {
-            $conn = new PDO("pgsql:host=$host;dbname=$db", $user, $password);
+            $conn = new PDO("pgsql:host=$host;port=$port;dbname=$db", $user, $password);
             // set the PDO error mode to exception
             $conn ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
