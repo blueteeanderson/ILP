@@ -93,6 +93,10 @@ nav {
 .minor {
     color:#CA4F9C;
 }
+.home-bio-text p{
+    margin-top:.5em;
+    margin-bottom:.5em;
+}
 .home-bio-text P:first-child {
     margin-top:0;
 }
