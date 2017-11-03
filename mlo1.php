@@ -1,6 +1,10 @@
 <?php 
-$times = 3;
-$cnt = 5;
+$times = 8;
+$info = array(array('title'=>"CST-436 Heuristic Evaluation Report",'link'=>'/mlo/1/catalyst_HE.docx','desc'=>'This is an in depth evaluation of the Catalyst Club\'s mobile and desktop website. 
+The evaluation follows 10 common heuristics', 'type'=>'document'),
+array('title'=>'CST-436 MyPalHal','link'=>'anderson_qwar.docx','desc'=>'This presentations covers the research, persona, problem statement and competetive analysis required to commence the prototype of a new mobile application idea.', 'type'=>'presentation'));
+$cnt = count($info);
+$pg = (isset($_GET['id']) ? $_GET['id']-1 : 0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,10 +28,14 @@ $cnt = 5;
             <div class="ex-nav">
                 <?php include "scripts/ex_nav.php";?>
             </div>
-            <div class="ex-content">
-                <h1 class="exercise-title">Title</h1>
-                <p>Description</p>
-                Links
+           <div class="ex-content">
+                <h1 class="exercise-title"><?=$info[$pg]['title']?></h1>
+                <p><?=$info[$pg]['desc']?></p>
+                <?php if($info[$pg]['type']!='image') { ?>
+                    <a href="<?=$info[$pg]['link']?>"><?=$info[$pg]['type']?></a>
+                <?php } else { ?>
+                    <img src="<?=$info[$pg]['link']?>" />
+                <?php } ?>
             </div>
         </main>
         <footer></footer>

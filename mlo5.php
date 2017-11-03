@@ -1,6 +1,8 @@
 <?php 
-$times = 6;
-$cnt = 4;
+$times = 8;
+$info = array(array('title'=>"MPC CSIS11 LC-3 ALU with Memory",'link'=>'/mlo/5/lc3_alu_memory.gif','desc'=>'For this project Logicsm was used to create the logic circuits to form the ALU and memory of an LC-3 computer. ', 'type'=>'image'));
+$cnt = count($info);
+$pg = (isset($_GET['id']) ? $_GET['id']-1 : 0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,9 +27,13 @@ $cnt = 4;
                 <?php include "scripts/ex_nav.php";?>
             </div>
             <div class="ex-content">
-                <h1 class="exercise-title">Title</h1>
-                <p>Description</p>
-                Links
+                <h1 class="exercise-title"><?=$info[$pg]['title']?></h1>
+                <p><?=$info[$pg]['desc']?></p>
+                <?php if($info[$pg]['type']!='image') { ?>
+                    <a href="<?=$info[$pg]['link']?>"><?=$info[$pg]['type']?></a>
+                <?php } else { ?>
+                    <img src="<?=$info[$pg]['link']?>" />
+                <?php } ?>
             </div>
         </main>
         <footer></footer>

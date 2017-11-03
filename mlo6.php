@@ -1,6 +1,10 @@
+
 <?php 
-$times = 2;
-$cnt = 8;
+$times = 8;
+$info = array(array('title'=>'CST-300 Brain Computer Interfaces','link'=>'/mlo/6/anderson_qwar.docx','desc'=>'This paper discusses the potential impact of BCIs and their ethical ramifications on society', 'type'=>'document'),
+);
+$cnt = count($info);
+$pg = (isset($_GET['id']) ? $_GET['id']-1 : 0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,9 +29,13 @@ $cnt = 8;
                 <?php include "scripts/ex_nav.php";?>
             </div>
             <div class="ex-content">
-                <h1 class="exercise-title">Title</h1>
-                <p>Description</p>
-                Links
+                <h1 class="exercise-title"><?=$info[$pg]['title']?></h1>
+                <p><?=$info[$pg]['desc']?></p>
+                <?php if($info[$pg]['type']!='image') { ?>
+                    <a href="<?=$info[$pg]['link']?>"><?=$info[$pg]['type']?></a>
+                <?php } else { ?>
+                    <img src="<?=$info[$pg]['link']?>" />
+                <?php } ?>
             </div>
         </main>
         <footer></footer>
