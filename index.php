@@ -32,22 +32,28 @@ $con = new DBConn();
             <?php for($j=0;$j<$swCols; $j++) { 
                 switch($sc) {
                     case 20:
-                        echo '<div class="flex-item l-1">
-                                <a href="mlo1.php">MLO 1</a>
+                        echo '<div class="flex-item l-1 tooltip">
+                                <a href="mlo1.php">MLO 1
+                                 <span class="tooltip-right tooltiptext">Professional Communication & Development</span>
+                                </a>
                               </div>';
                          $sc+=2;
                          $j +=1;
                         break;
                      case 52:
-                        echo '<div class="flex-item l-1">
-                                <a href="mlo4.php">MLO 4</a>
+                        echo '<div class="flex-item l-1 tooltip">
+                                <a href="mlo4.php">MLO 4
+                                <span class="tooltip-left tooltiptext">Programming</span>
+                                </a>
                               </div>';
                          $sc+=2;
                          $j +=1;
                         break;
                     case 96:
-                        echo '<div class="flex-item l-1">
-                                <a href="mlo3.php">MLO 3</a>
+                        echo '<div class="flex-item l-1 tooltip">
+                                <a href="mlo3.php">MLO 3
+                                <span class="tooltip-right tooltiptext">Design Principles</span>
+                                </a>
                               </div>';
                          $sc+=2;
                          $j +=1;
@@ -55,29 +61,37 @@ $con = new DBConn();
                     case 57:
                         $sc+=2;
                         $j+=1;
-                        echo '<div class="flex-item l-2">
-                                <a href="mlo2.php">MLO 2</a>
+                        echo '<div class="flex-item l-2 tooltip">
+                                <a href="mlo2.php">MLO 2
+                                <span class="tooltip-right tooltiptext">Interaction Design</span>
+                                </a>
                               </div>';
                         break;
                     case 86:
                         $sc+=2;
                         $j+=1;
-                        echo '<div class="flex-item l-3">
-                                <a href="mlo5.php">MLO 5</a>
+                        echo '<div class="flex-item l-3 tooltip">
+                                <a href="mlo5.php">MLO 5
+                                <span class="tooltip-left tooltiptext">Computing & Networking</span>
+                                </a>
                               </div>';
                         break;
                     case 121:
                         $sc+=2;
                         $j+=1;
-                        echo '<div class="flex-item l-3">
-                                <a href="mlo6.php">MLO 6</a>
+                        echo '<div class="flex-item l-3 tooltip">
+                                <a href="mlo6.php">MLO 6
+                                 <span class="tooltip-left tooltiptext">Ethics</span>
+                                 </a>
                               </div>';
                         break;
                     case 160:
                         $sc+=2;
                         $j+=1;
-                        echo '<div class="flex-item l-3">
-                                <a href="mlo7.php">MLO 7</a>
+                        echo '<div class="flex-item l-3 tooltip">
+                                <a href="mlo7.php">MLO 7
+                                <span class="tooltip-left tooltiptext">Application & Synthesis</span>
+                                </a>
                               </div>';
                         break;
                     default:

@@ -27,7 +27,7 @@ $pg = (isset($_GET['id']) ? $_GET['id']-1 : 0);
                 <?php include "scripts/ex_nav.php";?>
             </div>
             <div class="ex-content">
-                <h1 class="exercise-title"><?=$info[$pg]['title']?></h1>
+                <h1 class="exercise-title">Coming Soon on completion of capstone<?=$info[$pg]['title']?></h1>
                 <p><?=$info[$pg]['desc']?></p>
                 <?php if($info[$pg]['type']!='image') { ?>
                     <a href="<?=$info[$pg]['link']?>"><?=$info[$pg]['type']?></a>
